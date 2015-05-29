@@ -24,10 +24,5 @@
         "psr-4": {
             "igogo5yo\\uploadfromurl\\": ""
         }
-    },
-    "extra": {
-        "branch-alias": {
-            "dev-master": "1.0-dev"
-        }
     }
 }
