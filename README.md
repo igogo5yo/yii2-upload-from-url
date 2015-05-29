@@ -21,7 +21,7 @@ php composer.phar require --prefer-dist igogo5yo/yii2-upload-from-url
 or add
 
 ```
-"igogo5yo/yii2-upload-from-url": "~1.0"
+"igogo5yo/yii2-upload-from-url": ">=1.0"
 ```
 
 to your `composer.json` file
@@ -35,7 +35,7 @@ Usage
 $model = new Post();
 $model->image = 'http://static.yiiframework.com/files/logo/yii.png';
 
-$file = UploadFileByURL::initWithModel( $model, 'image' );
+$file = UploadFromUrl::initWithModel( $model, 'image' );
 
 //if second parameter is TRUE it writes uploaded file path to this model property 
 $file->saveAs( 'uploads/yii.png', true );   
@@ -49,7 +49,7 @@ echo $model->image; // uploads/yii.png
 $url = 'http://static.yiiframework.com/files/logo/yii.png' ;
 $path = 'uploads/yii.png';
 
-$file = UploadFileByURL::initWithUrl($url);
+$file = UploadFromUrl::initWithUrl($url);
 $file->saveAs( $path );   
 
 //Set to model
@@ -64,7 +64,7 @@ $url = 'http://static.yiiframework.com/files/logo/yii.png' ;
 $path = 'uploads/yii.png';
 $model = new Post();
 
-$file = UploadFileByURL::initWithUrlAndModel($url, $model, 'image');
+$file = UploadFromUrl::initWithUrlAndModel($url, $model, 'image');
 $file->saveAs( $path, true );   
 
 echo $model->image; // uploads/yii.png
