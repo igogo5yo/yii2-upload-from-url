@@ -1,11 +1,12 @@
 <?php
-/**
+ /**
  * This file is part of the igogo5yo/yii2-upload-from-url project.
- *
- * (c) igogo5yo project <http://github.com/igogo5yo/yii2-upload-from-url>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
+ *
+ * @copyright (c) igogo5yo
+ * @link http://github.com/igogo5yo/yii2-upload-from-url
  */
 namespace igogo5yo\uploadfromurl;
 use Yii;
@@ -18,8 +19,8 @@ use yii\validators\FileValidator;
  *
  * @property integer $sizeLimit The size limit for uploaded files. This property is read-only.
  *
- * @author Qiang Xue <skliar.ihor@gmail.com>
- * @since 2.0
+ * @author Skliar Ihor <skliar.ihor@gmail.com>
+ * @since 1.0
  */
 class FileFromUrlValidator extends FileValidator
 {  

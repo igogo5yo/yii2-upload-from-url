@@ -7,8 +7,6 @@
  *
  * @copyright (c) igogo5yo
  * @link http://github.com/igogo5yo/yii2-upload-from-url
- * @author Skliar Ihor <skliar.ihor@gmail.com>
- * @version v1.0
  */
 namespace igogo5yo\uploadfromurl;
 
