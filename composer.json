@@ -1,0 +1,33 @@
+{
+    "name": "igogo5yo/yii2-upload-from-url",
+    "description": "UploadFromUrl extension for Yii Framework 2",
+    "keywords": [
+        "upload link",
+        "upload file",
+        "upload url",
+        "igogo5yo",
+        "yii2",
+        "framework"
+    ],
+    "type": "yii2-extension",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Skliar Ihor",
+            "email": "skliar.ihor@gmail.com"
+        }
+    ],
+    "require": {
+        "yiisoft/yii2": "~2.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "igogo5yo\\uploadfromurl\\": ""
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        }
+    }
+}
