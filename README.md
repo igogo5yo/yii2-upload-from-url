@@ -21,7 +21,7 @@ php composer.phar require --prefer-dist igogo5yo/yii2-upload-from-url
 or add
 
 ```
-"igogo5yo/yii2-upload-from-url: ">=1.0"
+"igogo5yo/yii2-upload-from-url": "~1.0"
 ```
 
 to your `composer.json` file

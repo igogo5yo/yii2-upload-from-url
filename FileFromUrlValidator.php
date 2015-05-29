@@ -4,9 +4,9 @@
  * @copyright Copyright (c) 2008 Yii Software LLC
  * @license http://www.yiiframework.com/license/
  */
-namespace igogo5yo\upload;
+namespace igogo5yo\uploadfromurl;
 use Yii;
-use igogo5yo\upload\UploadFromUrl;
+use igogo5yo\uploadfromurl\UploadFromUrl;
 use yii\helpers\FileHelper;
 use yii\validators\FileValidator;
 /**
