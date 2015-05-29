@@ -1,8 +1,14 @@
 <?php
-/**
- * @link http://www.yiiframework.com/
- * @copyright Copyright (c) 2008 Yii Software LLC
- * @license http://www.yiiframework.com/license/
+ /**
+ * This file is part of the igogo5yo/yii2-upload-from-url project.
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ *
+ * @copyright (c) igogo5yo
+ * @link http://github.com/igogo5yo/yii2-upload-from-url
+ * @author Skliar Ihor <skliar.ihor@gmail.com>
+ * @version v1.0
  */
 namespace igogo5yo\uploadfromurl;
 
@@ -11,6 +17,7 @@ use yii\db\ActiveRecord;
 use yii\helpers\FileHelper;
 use yii\base\Exception;
 use yii\base\Object;
+
 /**
  * UploadFileByURL represents the information for an file by url address.
  *
@@ -19,16 +26,10 @@ use yii\base\Object;
  * You may also query other information about the file, including [[name]],
  * [[extension]], [[type]], [[size]] etc.
  *
- * @todo COMMENST 
- * @property string $baseName Original file base name. This property is read-only.
- * @property string $extension File extension. This property is read-only.
- * @property boolean $hasError Whether there is an error with the uploaded file. Check [[error]] for detailed
- * error code information. This property is read-only.
  *
  * @author Skliar Ihor <skliar.ihor@gmail.com>
- * @since 2.0
+ * @since 1.0
  */
-
 class UploadFromUrl extends Object
 {
 	/**

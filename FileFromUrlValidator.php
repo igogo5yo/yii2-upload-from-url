@@ -1,22 +1,24 @@
 <?php
 /**
- * @link http://www.yiiframework.com/
- * @copyright Copyright (c) 2008 Yii Software LLC
- * @license http://www.yiiframework.com/license/
+ * This file is part of the igogo5yo/yii2-upload-from-url project.
+ *
+ * (c) igogo5yo project <http://github.com/igogo5yo/yii2-upload-from-url>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
  */
 namespace igogo5yo\uploadfromurl;
 use Yii;
 use igogo5yo\uploadfromurl\UploadFromUrl;
 use yii\helpers\FileHelper;
 use yii\validators\FileValidator;
+
 /**
- * FileValidator verifies if an attribute is receiving a valid uploaded file.
- *
- * Note that you should enable `fileinfo` PHP extension.
+ * FileFromUrlValidator verifies if an attribute is receiving a valid uploaded file from url.
  *
  * @property integer $sizeLimit The size limit for uploaded files. This property is read-only.
  *
- * @author Qiang Xue <qiang.xue@gmail.com>
+ * @author Qiang Xue <skliar.ihor@gmail.com>
  * @since 2.0
  */
 class FileFromUrlValidator extends FileValidator
@@ -120,7 +122,7 @@ class FileFromUrlValidator extends FileValidator
         return !($value instanceof UploadFromUrl) || $value->error == UPLOAD_ERR_NO_FILE;
     }
     /**
-     * Checks if given uploaded file have correct type (extension) according current validator settings.
+     * Checks if given uploaded from url file have correct type (extension) according current validator settings.
      * @param BaseUploadFileValidable $file
      * @return boolean
      */
