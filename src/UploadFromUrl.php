@@ -77,7 +77,7 @@ class UploadFromUrl extends Object
     	]);
     }
 
-	public static function initWithModel(ActiveRecord $model, $attribute) 
+	public static function initWithModel($model, $attribute)
 	{
         return self::createInstance([
     		'url' => $model->{$attribute},
@@ -87,7 +87,7 @@ class UploadFromUrl extends Object
     	]);
 	}
 
-	public static function initWithUrlAndModel($url, ActiveRecord $model, $attribute)
+	public static function initWithUrlAndModel($url, $model, $attribute)
 	{
         return self::createInstance([
     		'url' => $url,
@@ -96,6 +96,11 @@ class UploadFromUrl extends Object
     		'attribute' => $attribute,
     	]);
 	}
+
+    public static function getInstance($model, $attribute)
+    {
+        return self::initWithModel($model, $attribute);
+    }
 
 	public function saveAs($file, $saveToModel = false)
 	{

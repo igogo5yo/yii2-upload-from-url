@@ -32,18 +32,31 @@ Usage
 **Example 1**
 ```php
 $model = new Post();
+$model->load(Yii::$app->request->post());
+
+$file = UploadFromUrl::getInstance( $model, 'image' );
+
+//if second parameter is TRUE it writes uploaded file path to this model property
+$file->saveAs( 'uploads/yii.png', true );   
+
+echo $model->image; // uploads/yii.png
+```
+
+**Example 2**
+```php
+$model = new Post();
 $model->image = 'http://static.yiiframework.com/files/logo/yii.png';
 
 $file = UploadFromUrl::initWithModel( $model, 'image' );
 
-//if second parameter is TRUE it writes uploaded file path to this model property 
+//if second parameter is TRUE it writes uploaded file path to this model property
 $file->saveAs( 'uploads/yii.png', true );   
 
 echo $model->image; // uploads/yii.png
 ```
 
 
-**Example 2**
+**Example 3**
 ```php
 $url = 'http://static.yiiframework.com/files/logo/yii.png' ;
 $path = 'uploads/yii.png';
@@ -57,7 +70,7 @@ $model->image = $path;
 ```
 
 
-**Example 3**
+**Example 4**
 ```php
 $url = 'http://static.yiiframework.com/files/logo/yii.png' ;
 $path = 'uploads/yii.png';

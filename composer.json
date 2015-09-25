@@ -22,7 +22,7 @@
     },
     "autoload": {
         "psr-4": {
-            "igogo5yo\\uploadfromurl\\": ""
+            "igogo5yo\\uploadfromurl\\": "src"
         }
     }
 }
