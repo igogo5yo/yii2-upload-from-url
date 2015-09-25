@@ -72,7 +72,7 @@ class UploadFromUrl extends Object
 
 	public static function initWithUrl($url)
     {
-        return self::getInstance([
+        return self::createInstance([
     		'url' => $url
     	]);
     }
