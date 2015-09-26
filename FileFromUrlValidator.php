@@ -89,7 +89,7 @@ class FileFromUrlValidator extends FileValidator
                     return [$this->tooSmall, ['file' => $file->name, 'limit' => $this->minSize]];
                 } elseif (!empty($this->extensions) && !$this->validateExtension($file)) {
                     return [$this->wrongExtension, ['file' => $file->name, 'extensions' => implode(', ', $this->extensions)]];
-                } elseif (!empty($this->mimeTypes) &&  !in_array(FileHelper::getMimeType($file->tempName), $this->mimeTypes, false)) {
+                } elseif (!empty($this->mimeTypes) &&  !in_array($file->type, $this->mimeTypes, false)) {
                     return [$this->wrongMimeType, ['file' => $file->name, 'mimeTypes' => implode(', ', $this->mimeTypes)]];
                 } else {
                     return null;
