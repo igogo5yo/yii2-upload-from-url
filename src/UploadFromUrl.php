@@ -109,6 +109,7 @@ class UploadFromUrl extends Object
 		} else if ($this->isWithModel) {
 			$this->model->{$this->attribute} = null;
 		}
+
 		return copy($this->url, $file);
 	}
 

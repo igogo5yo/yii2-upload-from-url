@@ -23,7 +23,7 @@ use yii\validators\FileValidator;
  * @since 1.0
  */
 class FileFromUrlValidator extends FileValidator
-{  
+{
     /**
      * @inheritdoc
      */

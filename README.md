@@ -34,10 +34,10 @@ Usage
 $model = new Post();
 $model->load(Yii::$app->request->post());
 
-$file = UploadFromUrl::getInstance( $model, 'image' );
+$file = UploadFromUrl::getInstance($model, 'image');
 
 //if second parameter is TRUE it writes uploaded file path to this model property
-$file->saveAs( 'uploads/yii.png', true );   
+$file->saveAs('uploads/yii.png', true);   
 
 echo $model->image; // uploads/yii.png
 ```
@@ -47,10 +47,10 @@ echo $model->image; // uploads/yii.png
 $model = new Post();
 $model->image = 'http://static.yiiframework.com/files/logo/yii.png';
 
-$file = UploadFromUrl::initWithModel( $model, 'image' );
+$file = UploadFromUrl::initWithModel($model, 'image');
 
 //if second parameter is TRUE it writes uploaded file path to this model property
-$file->saveAs( 'uploads/yii.png', true );   
+$file->saveAs('uploads/yii.png', true);   
 
 echo $model->image; // uploads/yii.png
 ```
@@ -62,7 +62,7 @@ $url = 'http://static.yiiframework.com/files/logo/yii.png' ;
 $path = 'uploads/yii.png';
 
 $file = UploadFromUrl::initWithUrl($url);
-$file->saveAs( $path );   
+$file->saveAs($path);   
 
 //Set to model
 $model = new Post();
@@ -77,7 +77,7 @@ $path = 'uploads/yii.png';
 $model = new Post();
 
 $file = UploadFromUrl::initWithUrlAndModel($url, $model, 'image');
-$file->saveAs( $path, true );   
+$file->saveAs($path, true);   
 
 echo $model->image; // uploads/yii.png
 ```
@@ -89,4 +89,11 @@ echo $model->image; // uploads/yii.png
      [['image'], 'igogo5yo\uploadfromurl\FileFromUrlValidator', 'extensions' => 'csv', 'mimeTypes' => 'text/plain'],
 ...
 ]
+```
+
+
+Run Tests
+---------
+```bash
+phpunit --bootstrap tests/bootstrap.php tests
 ```
