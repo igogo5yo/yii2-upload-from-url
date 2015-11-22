@@ -32,7 +32,7 @@ before_script:
     fi
 
 script:
-  - vendor/bin/phpunit --bootstrap tests/bootstrap.php tests
+  - phpunit --bootstrap tests/bootstrap.php tests
 
 after_script:
   - |
