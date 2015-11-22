@@ -2,6 +2,7 @@ UploadFromUrl extension for Yii 2
 =====================================
 [![Build Status](https://travis-ci.org/igogo5yo/yii2-upload-from-url.svg?branch=master)](https://travis-ci.org/igogo5yo/yii2-upload-from-url)
 [![Latest Stable Version](https://poser.pugx.org/igogo5yo/yii2-upload-from-url/v/stable)](https://packagist.org/packages/igogo5yo/yii2-upload-from-url) [![Total Downloads](https://poser.pugx.org/igogo5yo/yii2-upload-from-url/downloads)](https://packagist.org/packages/igogo5yo/yii2-upload-from-url) [![Latest Unstable Version](https://poser.pugx.org/igogo5yo/yii2-upload-from-url/v/unstable)](https://packagist.org/packages/igogo5yo/yii2-upload-from-url) [![License](https://poser.pugx.org/igogo5yo/yii2-upload-from-url/license)](https://packagist.org/packages/igogo5yo/yii2-upload-from-url) [![Dependency Status](https://www.versioneye.com/user/projects/55686ea96365320026021300/badge.svg?style=flat)](https://www.versioneye.com/user/projects/55686ea96365320026021300)
+
 This is the upload file from url address extension for Yii 2. It have class UploadFromUrl for upload files from URL and it have FileFromUlrValidator for validate model attribute with file from url.
 
 Please submit issue reports and pull requests to the main repository.
