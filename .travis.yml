@@ -16,9 +16,6 @@ cache:
     - vendor
     - $HOME/.composer/cache
 
-before_install:
-  - pip install --user codecov
-
 install:
   - travis_retry composer self-update && composer --version
   - travis_retry composer global require "fxp/composer-asset-plugin:~1.1.0"
@@ -36,7 +33,7 @@ before_script:
     fi
 
 script:
-  - phpunit --bootstrap tests/bootstrap.php tests
+  - phpunit --coverage-clover=coverage.xml --bootstrap tests/bootstrap.php tests
 
 after_script:
   - |
@@ -47,4 +44,4 @@ after_script:
 
 
 after_success:
-  - codecov
+  - bash <(curl -s https://codecov.io/bash)
