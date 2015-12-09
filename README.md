@@ -2,7 +2,7 @@ UploadFromUrl extension for Yii 2
 =====================================
 [![Build Status](https://travis-ci.org/igogo5yo/yii2-upload-from-url.svg?branch=master)](https://travis-ci.org/igogo5yo/yii2-upload-from-url)
 [![Latest Stable Version](https://poser.pugx.org/igogo5yo/yii2-upload-from-url/v/stable)](https://packagist.org/packages/igogo5yo/yii2-upload-from-url) 
-[![Total Downloads](https://poser.pugx.org/igogo5yo/yii2-upload-from-url/downloads)](https://packagist.org/packages/igogo5yo/yii2-upload-from-url)  
+[![Total Downloads](https://poser.pugx.org/igogo5yo/yii2-upload-from-url/downloads)](https://packagist.org/packages/igogo5yo/yii2-upload-from-url)
 [![License](https://poser.pugx.org/igogo5yo/yii2-upload-from-url/license)](https://packagist.org/packages/igogo5yo/yii2-upload-from-url) 
 [![Dependency Status](https://www.versioneye.com/user/projects/55686ea96365320026021300/badge.svg?style=flat)](https://www.versioneye.com/user/projects/55686ea96365320026021300)
 [![codecov.io](https://codecov.io/github/igogo5yo/yii2-upload-from-url/coverage.svg?branch=master)](https://codecov.io/github/igogo5yo/yii2-upload-from-url?branch=master)
