@@ -16,6 +16,9 @@ cache:
     - vendor
     - $HOME/.composer/cache
 
+before_install:
+  - pip install --user codecov
+
 install:
   - travis_retry composer self-update && composer --version
   - travis_retry composer global require "fxp/composer-asset-plugin:~1.1.0"
@@ -41,3 +44,7 @@ after_script:
       travis_retry wget https://scrutinizer-ci.com/ocular.phar
       php ocular.phar code-coverage:upload --format=php-clover coverage.clover
     fi
+
+
+after_success:
+  - codecov
