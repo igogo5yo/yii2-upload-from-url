@@ -31,9 +31,13 @@ use yii\base\Object;
 class UploadFromUrl extends Object
 {
 	/**
-     * @var string the original name of the file being uploaded
-     */
-    public $name;
+	 * @var string the original name of the file being uploaded
+	 */
+	public $name;
+	/**
+	 * @var string the name of the file without extension being uploaded
+	 */
+	public $baseName;
     /**
      * @var string the MIME-type of the uploaded file (such as "image/gif").
      * Since this MIME type is not checked on the server side, do not take this value for granted.
@@ -130,6 +134,7 @@ class UploadFromUrl extends Object
 
 		$fname = explode('/', $parsed_url['path']);
 		$options['name'] = end($fname);
+		$options['baseName'] = explode('.', $options['name'], 1);
 		$ext = explode('.', $options['name']);
 		$options['extension'] = mb_strtolower(end($ext));
 

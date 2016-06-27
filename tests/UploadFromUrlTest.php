@@ -43,6 +43,7 @@ class UploadFromUrlTest extends \PHPUnit_Framework_TestCase
         $path = self::UPLOAD_DIR . '/yii.png';
 
         $file = UploadFromUrl::initWithUrl(self::FILE_URL);
+
         $file->saveAs($path);
 
         $this->assertTrue(file_exists($path));
@@ -58,5 +59,18 @@ class UploadFromUrlTest extends \PHPUnit_Framework_TestCase
 
         $this->assertEquals($path, $model->image);
         $this->assertTrue(file_exists($path));
+    }
+
+    public function testFour()
+    {
+        $path = self::UPLOAD_DIR . '/yii.png';
+        $model = new Model;
+
+        $file = UploadFromUrl::initWithUrlAndModel(self::FILE_URL, $model, 'image');
+        $file->saveAs($path, true);
+
+        $this->assertTrue(!empty($file->baseName));
+        $this->assertTrue(!empty($file->name));
+        $this->assertTrue(!empty($file->extension));
     }
 }
