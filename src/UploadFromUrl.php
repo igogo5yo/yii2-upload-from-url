@@ -131,9 +131,11 @@ class UploadFromUrl extends Object
             $options['error'] = UPLOAD_ERR_NO_FILE;
         }
 
-        $options['name'] = pathinfo($parsed_url['path'], PATHINFO_BASENAME);
-        $options['baseName'] = pathinfo($parsed_url['path'], PATHINFO_FILENAME);
-        $options['extension'] = mb_strtolower(pathinfo($parsed_url['path'], PATHINFO_EXTENSION));
+        $options['name'] = isset($parsed_url['path']) ? pathinfo($parsed_url['path'], PATHINFO_BASENAME) : '';
+        $options['baseName'] = isset($parsed_url['path']) ? pathinfo($parsed_url['path'], PATHINFO_FILENAME) : '';
+        $options['extension'] = isset($parsed_url['path'])
+            ? mb_strtolower(pathinfo($parsed_url['path'], PATHINFO_EXTENSION))
+            : '';
         $options['size'] = isset($headers['Content-Length']) ? $headers['Content-Length'] : 0;
         $options['type'] = isset($headers['Content-Type'])
             ? $headers['Content-Type']
