@@ -9,6 +9,7 @@
  * @link http://github.com/igogo5yo/yii2-upload-from-url
  */
 namespace igogo5yo\uploadfromurl;
+
 use Yii;
 use igogo5yo\uploadfromurl\UploadFromUrl;
 use yii\helpers\FileHelper;
@@ -91,9 +92,9 @@ class FileFromUrlValidator extends FileValidator
                     return [$this->wrongExtension, ['file' => $file->name, 'extensions' => implode(', ', $this->extensions)]];
                 } elseif (!empty($this->mimeTypes) &&  !in_array($file->type, $this->mimeTypes, false)) {
                     return [$this->wrongMimeType, ['file' => $file->name, 'mimeTypes' => implode(', ', $this->mimeTypes)]];
-                } else {
-                    return null;
                 }
+                
+                return null;
             case UPLOAD_ERR_INI_SIZE:
             case UPLOAD_ERR_FORM_SIZE:
                 return [$this->tooBig, ['file' => $file->name, 'limit' => $this->getSizeLimit()]];

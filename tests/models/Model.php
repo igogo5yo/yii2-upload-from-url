@@ -15,6 +15,7 @@ class Model extends \yii\base\Model
 {
     public $image;
 
+
     public function rules()
     {
         return [

@@ -73,4 +73,16 @@ class UploadFromUrlTest extends \PHPUnit_Framework_TestCase
         $this->assertTrue(!empty($file->name));
         $this->assertTrue(!empty($file->extension));
     }
+
+    public function testOptions()
+    {
+        $file = UploadFromUrl::initWithUrl(self::FILE_URL);
+
+        $this->assertEquals('yii', $file->baseName);
+        $this->assertEquals('png', $file->extension);
+        $this->assertEquals('yii.png', $file->name);
+        // Inthis test, size is non deterministic (Yii could change it's logo any time).
+        // Making sure it is > 0 is enough
+        $this->assertGreaterThan(0, $file->size);
+    }
 }
