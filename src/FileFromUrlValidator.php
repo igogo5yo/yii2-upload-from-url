@@ -9,6 +9,7 @@
  * @link http://github.com/igogo5yo/yii2-upload-from-url
  */
 namespace igogo5yo\uploadfromurl;
+
 use Yii;
 use igogo5yo\uploadfromurl\UploadFromUrl;
 use yii\helpers\FileHelper;
@@ -84,19 +85,40 @@ class FileFromUrlValidator extends FileValidator
         switch ($file->error) {
             case UPLOAD_ERR_OK:
                 if ($this->maxSize !== null && $file->size > $this->maxSize) {
-                    return [$this->tooBig, ['file' => $file->name, 'limit' => $this->getSizeLimit()]];
+                    return [
+                        $this->tooBig,
+                        [
+                            'file' => $file->name,
+                            'limit' => $this->getSizeLimit(),
+                            'formattedLimit' => Yii::$app->formatter->asShortSize($this->getSizeLimit()),
+                        ]
+                    ];
                 } elseif ($this->minSize !== null && $file->size < $this->minSize) {
-                    return [$this->tooSmall, ['file' => $file->name, 'limit' => $this->minSize]];
+                    return [
+                        $this->tooSmall,
+                        [
+                            'file' => $value->name,
+                            'limit' => $this->minSize,
+                            'formattedLimit' => Yii::$app->formatter->asShortSize($this->minSize),
+                        ],
+                    ];
                 } elseif (!empty($this->extensions) && !$this->validateExtension($file)) {
                     return [$this->wrongExtension, ['file' => $file->name, 'extensions' => implode(', ', $this->extensions)]];
-                } elseif (!empty($this->mimeTypes) &&  !in_array($file->type, $this->mimeTypes, false)) {
+                } elseif (!empty($this->mimeTypes) &&  !$this->validateMimeType($file)) {
                     return [$this->wrongMimeType, ['file' => $file->name, 'mimeTypes' => implode(', ', $this->mimeTypes)]];
-                } else {
-                    return null;
                 }
+
+                return null;
             case UPLOAD_ERR_INI_SIZE:
             case UPLOAD_ERR_FORM_SIZE:
-                return [$this->tooBig, ['file' => $file->name, 'limit' => $this->getSizeLimit()]];
+                return [
+                    $this->tooBig,
+                    [
+                        'file' => $file->name,
+                        'limit' => $this->getSizeLimit(),
+                        'formattedLimit' => Yii::$app->formatter->asShortSize($this->getSizeLimit()),
+                    ]
+                ];
             case UPLOAD_ERR_PARTIAL:
                 Yii::warning('File was only partially uploaded: ' . $file->name, __METHOD__);
                 break;
@@ -134,5 +156,23 @@ class FileFromUrlValidator extends FileValidator
             return false;
         }
         return true;
+    }
+
+    private function buildMimeTypeRegexp($mask)
+    {
+        return '/^' . str_replace('\*', '.*', preg_quote($mask, '/')) . '$/';
+    }
+
+    protected function validateMimeType($file)
+    {
+        foreach ($this->mimeTypes as $mimeType) {
+            if ($mimeType === $file->type) {
+                return true;
+            }
+            if (strpos($mimeType, '*') !== false && preg_match($this->buildMimeTypeRegexp($mimeType), $file->type)) {
+                return true;
+            }
+        }
+        return false;
     }
 }
