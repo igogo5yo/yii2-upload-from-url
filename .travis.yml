@@ -8,9 +8,6 @@ php:
 
 dist: trusty
 
-# faster builds on new travis setup not using sudo
-sudo: false
-
 # cache vendor dirs
 cache:
   directories:
