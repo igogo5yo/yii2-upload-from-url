@@ -27,10 +27,5 @@
         "psr-4": {
             "igogo5yo\\uploadfromurl\\": "src"
         }
-    },
-    "config": {
-        "github-oauth": {
-            "github.com": "043a7b642b891c75254831fb7cfd19da1c0f071d"
-        }
     }
 }
