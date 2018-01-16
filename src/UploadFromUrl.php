@@ -14,7 +14,7 @@ use yii\helpers\Html;
 use yii\db\ActiveRecord;
 use yii\helpers\FileHelper;
 use yii\base\Exception;
-use yii\base\Object;
+use yii\base\BaseObject;
 
 /**
  * UploadFileByURL represents the information for an file by url address.
@@ -27,7 +27,7 @@ use yii\base\Object;
  * @author Skliar Ihor <skliar.ihor@gmail.com>
  * @since 1.0
  */
-class UploadFromUrl extends Object
+class UploadFromUrl extends BaseObject
 {
     /**
      * @var string the original name of the file being uploaded
